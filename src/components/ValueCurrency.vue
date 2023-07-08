@@ -1,5 +1,9 @@
 <template>
-  <div class="overflow-x-auto md:overflow-x-hidden border shadow-2xl rounded-lg">
+  <div>
+  <h1 class="text-center text-4xl text-gray-800 mb-5 font-bold">Cotação</h1>
+  <router-link to="/convert" class="text-center border p-3 rounded  shadow-lg bg-gray-100 hover:bg-gray-400">Conversor de moeda</router-link>
+  <div class="overflow-x-auto md:overflow-x-hidden border shadow-2xl rounded-lg mt-8">
+    
     <div class="min-w-full">
       <table>
         <thead>
@@ -18,7 +22,7 @@
               <td class="py-4">
                 <img :src="`https://wise.com/web-art/assets/flags/${coin.code.toLowerCase()}.svg`" class="w-10 ml-4" />
               </td>
-              <td class="py-4">{{ coin.name }}</td>
+              <td class="py-4">{{ coin.codein }} X {{ coin.code }}</td>
               <td class="p-4 font-bold">R$ {{ Math.ceil(coin.ask * 100) / 100 }}</td>
 
               <td class="py-4">
@@ -30,7 +34,7 @@
               </td>
 
               <td class="py-4">
-                <span class="px-5 py-2 rounded-full" :class="[coin.pctChange < 0 ? 'bg-red-600 text-white' : 'bg-green-600 text-white']">{{ coin.pctChange }}</span>
+                <span class="px-5 py-2 rounded-full" :class="[coin.pctChange < 0 ? 'bg-red-600 text-white' : 'bg-green-600 text-white']">{{ coin.pctChange }} %</span>
               </td>
             </template>
           </tr>
@@ -38,6 +42,7 @@
       </table>
     </div>
   </div>
+</div>
 </template>
 
 <script>

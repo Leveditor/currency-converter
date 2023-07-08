@@ -1,18 +1,14 @@
 <template>
   <div class="max-w-5xl mx-auto px-4 py-12">
-    <h1 class="text-center text-4xl text-gray-500 mb-5">Cotação</h1>
-    <ValueCurrency />
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import ValueCurrency from './components/ValueCurrency.vue';
-import './assets/tailwind.css';
+import { defineComponent } from 'vue';
+import '@fortawesome/fontawesome-free/css/all.css';
 
-export default {
+export default defineComponent({
   name: 'App',
-  components: {
-    ValueCurrency,
-  },
-};
+});
 </script>
