@@ -29,11 +29,11 @@
     </div>
     <div class="flex justify-center mt-5 md:mt-0" v-if="secondSelectedCurrency && selectedCurrency">
       <div>
-        <img :src="`https://wise.com/web-art/assets/flags/${selectedCurrency.toLowerCase()}.svg`" class="w-10 ml-4" />
+        <img :src="`https://wise.com/web-art/assets/flags/${selectedCurrency.toLowerCase()}.svg`" class="w-10 ml-4 border border-gray-300 rounded-full" />
       </div>
       <div class="pl-4 pt-3">X</div>
       <div>
-        <img :src="`https://wise.com/web-art/assets/flags/${secondSelectedCurrency.toLowerCase()}.svg`" class="w-10 ml-4" />
+        <img :src="`https://wise.com/web-art/assets/flags/${secondSelectedCurrency.toLowerCase()}.svg`" class="w-10 ml-4 border border-gray-300 rounded-full" />
       </div>
     </div>
     <div class="flex justify-center mt-5" v-if="currencyData">

@@ -20,7 +20,7 @@
           <tr v-for="coin in currency" :key="coin.code" class="border-b text-center">
             <template v-if="!removedCurrency.includes(coin.name)">
               <td class="py-4">
-                <img :src="`https://wise.com/web-art/assets/flags/${coin.code.toLowerCase()}.svg`" class="w-10 ml-4" />
+                <img :src="`https://wise.com/web-art/assets/flags/${coin.code.toLowerCase()}.svg`" class="w-10 ml-4 border border-gray-300 rounded-full" />
               </td>
               <td class="py-4">{{ coin.codein }} X {{ coin.code }}</td>
               <td class="p-4 font-bold">R$ {{ Math.ceil(coin.ask * 100) / 100 }}</td>
