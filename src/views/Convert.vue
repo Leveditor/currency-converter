@@ -7,7 +7,7 @@
   </div>
 
   <div class="border rounded-lg p-12 shadow-2xl">
-    <p class="bg-yellow-500 w-full text-white pl-5 rounded">
+    <p class="bg-yellow-500 text-white pl-5 rounded w-full text-center">
       {{ messageError }}
     </p>
     <div class="md:flex justify-around">
