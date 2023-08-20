@@ -7,6 +7,9 @@
   </div>
 
   <div class="border rounded-lg p-12 shadow-2xl">
+    <p class="bg-yellow-500 text-white pl-5 rounded w-full text-center">
+      {{ messageError }}
+    </p>
     <div class="md:flex justify-around">
       <div>
         <select v-model="selectedCurrency" @change="fetchCurrencyData" class="w-full py-5 px-12 border bg-white shadow-xl mt-5">
@@ -55,6 +58,7 @@ export default {
       currencyData: null,
       convertedValue: null,
       inputValue: '',
+      messageError: '',
       removedCurrency: [
         'Litecoin/Real Brasileiro',
         'Bitcoin/Real Brasileiro',
@@ -72,6 +76,9 @@ export default {
           const response = await fetch(apiUrl);
           const data = await response.json();
           this.currencyData = data[0];
+
+          // message error from API
+          this.messageError = data.message;
         } catch (error) {
           console.error('Erro ao buscar os dados da moeda:', error);
         }
@@ -83,6 +90,7 @@ export default {
     convertCurrency() {
       const inputValue = parseFloat(this.inputValue);
       const askValue = parseFloat(this.currencyData.ask);
+      
       if (!isNaN(inputValue) && !isNaN(askValue)) {
         this.convertedValue = (inputValue * askValue).toLocaleString('pt-BR', {
           minimumFractionDigits: 2,
